@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>پایه هفتم - آموزش زیست</title>
+    <title>فصل ۵ - از معدن تا خانه</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
 
         body {
             font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
-            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            background: linear-gradient(135deg, #e8f5e9, #a5d6a7);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,24 +23,25 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(12px);
-            border-radius: 40px;
-            padding: 45px 35px;
-            text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 40, 20, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-radius: 48px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 80px rgba(0, 40, 20, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
         }
 
+        /* هدر */
         .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 14px;
         }
 
         .back-btn {
@@ -49,104 +51,259 @@
             text-decoration: none;
             color: #1a5a3a;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             background: #e6f2ea;
-            padding: 10px 22px;
+            padding: 10px 24px;
             border-radius: 60px;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .back-btn:hover {
             background: #1a7a4a;
             color: #fff;
-            transform: translateX(-4px);
+            transform: translateX(-5px);
+            box-shadow: 0 6px 20px rgba(26, 122, 74, 0.3);
         }
 
         .page-title {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             color: #1a5a3a;
             font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .page-title span {
-            background: #e6f2ea;
-            padding: 4px 16px;
+        .page-title .badge {
+            background: #1a7a4a;
+            color: #fff;
+            padding: 4px 18px;
             border-radius: 40px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: #3d6b4f;
         }
 
-        .chapter-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            max-width: 320px;
-            margin: 30px auto 10px;
-            gap: 18px;
+        /* بخش اصلی محتوا */
+        .content-section {
+            margin: 20px 0 30px;
         }
 
-        .chapter-btn {
-            display: block;
-            text-decoration: none;
-            background: #ffffff;
-            padding: 26px 20px;
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f1f8f4, #e0efe4);
             border-radius: 24px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-            border: 2px solid #1a7a4a;
-            transition: all 0.3s ease;
-            color: #1e3c2c;
-            font-weight: 700;
-            font-size: 1.3rem;
+            border-right: 6px solid #1a7a4a;
         }
 
-        .chapter-btn:hover {
-            transform: translateY(-6px) scale(1.02);
-            background: #fafffd;
-            box-shadow: 0 16px 40px rgba(26, 90, 58, 0.25);
-        }
-
-        .chapter-btn .ch-num {
+        .chapter-header .ch-icon {
+            font-size: 4rem;
             display: block;
-            font-size: 0.85rem;
-            color: #7a9a86;
+            margin-bottom: 8px;
+        }
+
+        .chapter-header h2 {
+            font-size: 2rem;
+            color: #1a5a3a;
+            margin-bottom: 4px;
+        }
+
+        .chapter-header .ch-sub {
+            color: #3d6b4f;
             font-weight: 400;
-            margin-top: 6px;
+            font-size: 1.1rem;
         }
 
-        .chapter-btn .arrow-icon {
-            display: inline-block;
-            margin-right: 8px;
-            transition: transform 0.3s ease;
+        /* محتوای آموزشی */
+        .lesson-content {
+            background: #fafffd;
+            border-radius: 24px;
+            padding: 30px 28px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #d9ebe2;
         }
 
-        .chapter-btn:hover .arrow-icon {
-            transform: translateX(8px);
+        .lesson-content h3 {
+            color: #1a5a3a;
+            font-size: 1.4rem;
+            margin: 20px 0 12px;
+            padding-right: 14px;
+            border-right: 4px solid #1a7a4a;
         }
 
+        .lesson-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .lesson-content p {
+            color: #2d4a3a;
+            line-height: 2;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .lesson-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 20px;
+        }
+
+        .lesson-content ul li {
+            padding: 10px 20px 10px 16px;
+            margin-bottom: 8px;
+            background: #f0f7f2;
+            border-radius: 16px;
+            color: #1e3c2c;
+            font-size: 1.02rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-right: 3px solid #66bb6a;
+        }
+
+        .lesson-content ul li::before {
+            content: "⛏️";
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e6f2ea, #d4e8db);
+            padding: 18px 24px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-right: 6px solid #1a7a4a;
+        }
+
+        .highlight-box strong {
+            color: #0f5a32;
+        }
+
+        /* دکمه‌های ناوبری */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #1a7a4a;
+            color: #1a5a3a;
+            background: white;
+            flex: 1;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .nav-btn:hover {
+            background: #1a7a4a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26, 122, 74, 0.25);
+        }
+
+        .nav-btn.prev:hover {
+            transform: translateX(5px) translateY(-3px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px) translateY(-3px);
+        }
+
+        .nav-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #b0c9ba;
+        }
+
+        .nav-btn.disabled:hover {
+            transform: none !important;
+            background: white !important;
+            color: #1a5a3a !important;
+            box-shadow: none !important;
+        }
+
+        /* فوتر */
         .footer {
             margin-top: 36px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #7a9a86;
             border-top: 1px solid #d9ebe2;
-            padding-top: 18px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        @media (max-width: 600px) {
+        .footer .teacher {
+            font-weight: 600;
+            color: #1a5a3a;
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 640px) {
             .container {
-                padding: 28px 16px;
+                padding: 24px 16px;
+                border-radius: 32px;
             }
 
             .top-bar {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
             }
 
             .page-title {
                 font-size: 1.4rem;
+                justify-content: center;
             }
 
-            .chapter-grid {
-                max-width: 100%;
+            .chapter-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .lesson-content {
+                padding: 20px 16px;
+            }
+
+            .lesson-content p {
+                font-size: 0.98rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                padding: 14px 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .chapter-header .ch-icon {
+                font-size: 3rem;
             }
         }
     </style>
@@ -154,26 +311,101 @@
 <body>
     <div class="container">
 
+        <!-- هدر -->
         <div class="top-bar">
-            <a href="index.html" class="back-btn">→ بازگشت</a>
+            <a href="index.html" class="back-btn">← بازگشت</a>
             <div class="page-title">
                 🌱 پایه هفتم
-                <span>علوم تجربی</span>
+                <span class="badge">علوم تجربی</span>
             </div>
         </div>
 
-        <h3 style="color:#3d6b4f; font-weight:500; margin-bottom:6px;">فصل‌های آموزشی</h3>
+        <!-- بخش اصلی -->
+        <div class="content-section">
 
-        <div class="chapter-grid">
-            <a href="F5.html" class="chapter-btn">
-                فصل ۵
-                <span class="ch-num">از معدن تا خانه</span>
-                <span class="arrow-icon">←</span>
-            </a>
+            <!-- هدر فصل -->
+            <div class="chapter-header">
+                <span class="ch-icon">⛏️</span>
+                <h2>فصل ۵</h2>
+                <span class="ch-sub">از معدن تا خانه</span>
+            </div>
+
+            <!-- محتوای آموزشی -->
+            <div class="lesson-content">
+
+                <h3>🔍 مقدمه</h3>
+                <p>
+                    موادّی که ما در زندگی روزمره استفاده می‌کنیم، از جمله فلزات، سوخت‌ها و مصالح ساختمانی، 
+                    همگی از دل زمین و معادن استخراج می‌شوند. در این فصل با فرآیند استخراج، فرآوری و تبدیل 
+                    مواد خام به محصولات قابل استفاده آشنا می‌شویم.
+                </p>
+
+                <h3>⛏️ معدن چیست؟</h3>
+                <p>
+                    معدن به محلی گفته می‌شود که مواد باارزش مانند سنگ‌آهن، مس، طلا، زغال‌سنگ و ... به صورت 
+                    طبیعی در آن یافت می‌شود. این مواد پس از استخراج، در کارخانه‌ها فرآوری شده و به محصولات 
+                    مفید تبدیل می‌شوند.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>📌 نکته مهم:</strong> ایران یکی از کشورهای غنی از نظر منابع معدنی است و معادن 
+                    بزرگی از سنگ‌آهن، مس، روی و سرب در نقاط مختلف کشور وجود دارد.
+                </div>
+
+                <h3>🔄 مراحل تبدیل مواد معدنی</h3>
+                <ul>
+                    <li>اکتشاف و شناسایی معدن</li>
+                    <li>استخراج (رُوباز یا زیرزمینی)</li>
+                    <li>خردایش و آسیاب کردن سنگ‌ها</li>
+                    <li>جداسازی مواد با ارزش از باطله</li>
+                    <li>فرآوری و ذوب (برای فلزات)</li>
+                    <li>تولید محصول نهایی (میلگرد، سیم، ظروف و ...)</li>
+                </ul>
+
+                <h3>🏭 از معدن تا کارخانه</h3>
+                <p>
+                    سنگ‌های استخراج شده از معدن به کارخانه منتقل می‌شوند. در کارخانه، این سنگ‌ها خرد شده و 
+                    سپس با استفاده از روش‌های شیمیایی و فیزیکی، مواد خالص از آن‌ها جدا می‌شود. برای مثال، 
+                    سنگ‌آهن در کوره‌های عظیم ذوب شده و آهن خالص به دست می‌آید.
+                </p>
+
+                <h3>🏠 محصولات نهایی در خانه</h3>
+                <p>
+                    محصولات حاصل از معادن به اشکال مختلف وارد خانه‌های ما می‌شوند:
+                </p>
+                <ul>
+                    <li>فلزات: قابلمه، سیم‌کشی، لوازم خانگی</li>
+                    <li>مواد ساختمانی: سیمان، گچ، آجر</li>
+                    <li>سوخت: زغال‌سنگ، نفت و گاز طبیعی</li>
+                    <li>زیورآلات: طلا، نقره و جواهرات</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>🌍 تأثیر بر محیط زیست:</strong> استخراج معادن می‌تواند به محیط زیست آسیب بزند. 
+                    بنابراین باید از روش‌های مدرن و دوستدار طبیعت برای استخراج استفاده کرد.
+                </div>
+
+                <h3>📝 جمع‌بندی</h3>
+                <p>
+                    در این فصل آموختیم که مواد اولیه بسیاری از وسایل اطراف ما از معادن تأمین می‌شوند. 
+                    فرآیند تبدیل سنگ معدن به محصول نهایی شامل مراحل مختلفی است و نیاز به دانش و فناوری دارد. 
+                    همچنین باید به تأثیرات زیست‌محیطی این صنعت توجه کنیم.
+                </p>
+
+            </div>
+
+            <!-- دکمه‌های ناوبری -->
+            <div class="nav-buttons">
+                <a href="F4.html" class="nav-btn prev">→ فصل قبل<br /><small>مواد و زندگی</small></a>
+                <a href="F6.html" class="nav-btn next">فصل بعد ←<br /><small>سفر آب روی زمین</small></a>
+            </div>
+
         </div>
 
+        <!-- فوتر -->
         <div class="footer">
-            استاد نوروزی‌نژاد · آموزش زیست
+            <span class="teacher">👨‍🏫 استاد نوروزی‌نژاد · آموزش زیست</span>
+            <span>📖 تمامی حقوق محفوظ است</span>
         </div>
 
     </div>
