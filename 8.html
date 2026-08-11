@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پایه هشتم - آموزش زیست</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(120, 60, 20, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #8d5a2e;
+            font-weight: 600;
+            font-size: 1rem;
+            background: #f5e6d9;
+            padding: 10px 22px;
+            border-radius: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #b87a4a;
+            color: #fff;
+            transform: translateX(-4px);
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            color: #8d5a2e;
+            font-weight: 800;
+        }
+
+        .page-title span {
+            background: #f5e6d9;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a87a4a;
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 320px;
+            margin: 30px auto 10px;
+            gap: 18px;
+        }
+
+        .chapter-btn {
+            display: block;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 26px 20px;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            border: 2px solid #b87a4a;
+            transition: all 0.3s ease;
+            color: #5a3a1e;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .chapter-btn:hover {
+            transform: translateY(-6px) scale(1.02);
+            background: #fffaf5;
+            box-shadow: 0 16px 40px rgba(184, 122, 74, 0.25);
+        }
+
+        .chapter-btn .ch-num {
+            display: block;
+            font-size: 0.85rem;
+            color: #a08060;
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .chapter-btn .arrow-icon {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .chapter-btn:hover .arrow-icon {
+            transform: translateX(8px);
+        }
+
+        .footer {
+            margin-top: 36px;
+            font-size: 0.8rem;
+            color: #a08060;
+            border-top: 1px solid #e6d5c4;
+            padding-top: 18px;
+        }
+
+        .coming-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            background: #f5e6d9;
+            color: #b87a4a;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 16px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .page-title {
+                font-size: 1.4rem;
+            }
+
+            .chapter-grid {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="top-bar">
+            <a href="index.html" class="back-btn">→ بازگشت</a>
+            <div class="page-title">
+                🔬 پایه هشتم
+                <span>علوم تجربی</span>
+            </div>
+        </div>
+
+        <h3 style="color:#a87a4a; font-weight:500; margin-bottom:6px;">فصل‌های آموزشی</h3>
+
+        <div class="chapter-grid">
+            <a href="#" class="chapter-btn" style="opacity:0.6; cursor:not-allowed; pointer-events:none; border-color:#ccc;">
+                فصل ۱
+                <span class="ch-num">در حال ساخت</span>
+                <span class="coming-badge">به زودی</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            استاد نوروزی‌نژاد · آموزش زیست
+        </div>
+
+    </div>
+</body>
+</html>
